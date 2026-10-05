@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Profilé de poutre en I">
+  <circle cx="32" cy="32" r="30" fill="#202B2A"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#527C68" stroke-width="2"/>
+  <path d="M14 14h36v9H37v18h13v9H14v-9h13V23H14z" fill="#F4F0E6"/>
+  <path d="M29 23h8v18h-8z" fill="#81A98D"/>
+  <path d="M17 17h30M17 47h30" stroke="#527C68" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
