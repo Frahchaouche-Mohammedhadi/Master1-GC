@@ -1,14 +1,7 @@
 // Edit this catalog to add modules, categories, and documents in one place.
 // Keep resource lists empty until real Drive links are available.
 const CURRICULUM = {
-  "Béton Armé": { "Cours": [
-    { title: "Cours 01 !", url: "https://drive.google.com/file/d/1nlA5A_uINdhFdnPTg2prrpO-4LGeU1lX/view?usp=drive_link" },
-    { title: "Cours 02 :D", url: "https://drive.google.com/file/d/1nlA5A_uINdhFdnPTg2prrpO-4LGeU1lX/view?usp=drive_link" },
-    { title: "Cours 03 :)", url: "https://drive.google.com/file/d/1nlA5A_uINdhFdnPTg2prrpO-4LGeU1lX/view?usp=drive_link" }
-  ], "TD": [
-{ title: "TD 01 !", url: "https://drive.google.com/file/d/1nlA5A_uINdhFdnPTg2prrpO-4LGeU1lX/view?usp=drive_link" },
-{ title: "Cours 01 !", url: "https://drive.google.com/file/d/1nlA5A_uINdhFdnPTg2prrpO-4LGeU1lX/view?usp=drive_link" }
-  ], "Examen / Interrogation": [] },
+  "Béton Armé": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
   "DDS 1": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
   "Structures Métalliques": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
   "MDS": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
