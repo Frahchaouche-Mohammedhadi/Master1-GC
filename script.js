@@ -155,7 +155,7 @@ function renderModules(moduleNames) {
     const count = categories.reduce((sum, category) => sum + getResources(name, category).length, 0);
     return `<button type="button" class="group flex min-h-44 flex-col rounded-2xl border border-[#d5e1e7] bg-white p-4 text-left shadow-[0_1px_2px_rgba(28,40,51,.035)] transition duration-200 hover:-translate-y-0.5 hover:border-[#1f4f70]/45 hover:shadow-[0_10px_28px_rgba(28,40,51,.09)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f4f70] active:translate-y-0 dark:border-white/10 dark:bg-[#182a3a] dark:hover:border-sky-300/35 dark:hover:shadow-[0_10px_28px_rgba(0,0,0,.2)] sm:p-5" data-module="${escapeHTML(name)}">
       <span class="flex w-full items-center gap-3.5">
-        <span class="module-icon-wrap h-12 w-12 shrink-0 p-1">${moduleIcons[name]}</span>
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#bfd4e0] bg-[#e6f1f7] p-1 text-[#173f5d] transition-colors group-hover:bg-[#dcebf3] dark:border-sky-200/20 dark:bg-sky-300/10 dark:text-sky-200 dark:group-hover:bg-sky-300/15">${moduleIcons[name]}</span>
         <span class="min-w-0 text-left text-[15px] font-semibold leading-snug text-slate-900 dark:text-white sm:text-base">${escapeHTML(name)}</span>
       </span>
       <span class="mt-4 flex w-full flex-wrap gap-1.5">${categories.map((category) => `<span class="rounded-md border border-transparent bg-[#fbfcfd] px-2 py-0.5 text-[10px] font-medium leading-4 text-slate-500 dark:bg-white/[.035] dark:text-slate-400">${escapeHTML(category)}</span>`).join("")}</span>
