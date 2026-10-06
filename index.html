@@ -34,6 +34,10 @@
     html { scroll-behavior: smooth; }
     body { min-width: 320px; }
     button, a { -webkit-tap-highlight-color: transparent; }
+    #brand-title-link, #brand-title-link:visited { color: #0f172a; }
+    #brand-title-link:hover, #brand-title-link:focus-visible { color: #216b60; }
+    :root.dark #brand-title-link, :root.dark #brand-title-link:visited { color: #fff; }
+    :root.dark #brand-title-link:hover, :root.dark #brand-title-link:focus-visible { color: #6ee7b7; }
     :focus-visible { outline: 3px solid #0e9f8a; outline-offset: 3px; }
     #browse-section { scroll-margin-top: 1rem; }
     .safe-bottom { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
@@ -51,7 +55,7 @@
             <img src="logo.svg?v=20261006-structural-frame" alt="" class="h-14 w-14" aria-hidden="true">
           </a>
           <span class="min-w-0">
-            <span class="block truncate text-sm font-semibold tracking-tight text-slate-900 dark:text-white"><a href="https://frahchaouche-mohammedhadi.github.io/Master1-GC/#" class="rounded-sm hover:text-[#216b60] dark:hover:text-emerald-300">Génie Civil —</a>&nbsp;UDBKM</span>
+            <span class="block truncate text-sm font-semibold tracking-tight"><a id="brand-title-link" href="https://frahchaouche-mohammedhadi.github.io/Master1-GC/#" class="rounded-sm transition-colors focus-visible:outline-none">Génie Civil —&nbsp;UDBKM</a></span>
             <span class="flex min-w-0 items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400"><svg class="h-2.5 w-2.5 shrink-0 text-[#216b60] dark:text-emerald-300" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0 7.5 4.5 12 6 7.5 7.5 6 12 4.5 7.5 0 6l4.5-1.5z" fill="currentColor"/></svg><span class="truncate">Conçu par Mohammed Hadi</span></span>
           </span>
         </div>
