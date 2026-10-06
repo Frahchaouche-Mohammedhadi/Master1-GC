@@ -104,7 +104,7 @@ function setSemester(semester, { recordHistory = true } = {}) {
     const selected = button.dataset.semester === semester;
     button.setAttribute("aria-pressed", String(selected));
     button.className = `semester-button min-h-10 flex-1 rounded-lg px-5 py-2 text-sm font-semibold transition sm:flex-none ${selected
-      ? "bg-white text-[#126c62] shadow-sm dark:bg-[#29423b] dark:text-emerald-200"
+      ? "bg-white text-[#173f5d] shadow-sm dark:bg-[#1c3950] dark:text-sky-200"
       : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"}`;
   });
   document.querySelector("#semester-caption").textContent = semester === "S1" ? "Semestre 1" : "Semestre 2";
@@ -142,8 +142,8 @@ function renderModules(moduleNames) {
   breadcrumb.textContent = `${state.semester} / Modules`;
   if (moduleNames.length === 0) {
     content.className = "block";
-    content.innerHTML = `<div class="rounded-2xl border border-dashed border-[#d9d6cb] bg-white/75 px-5 py-8 text-center dark:border-white/15 dark:bg-white/[.025] sm:px-8 sm:py-10">
-      <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f1f2ed] text-[#216b60] dark:bg-emerald-300/10 dark:text-emerald-300">${icons.empty}</span>
+    content.innerHTML = `<div class="rounded-2xl border border-dashed border-[#c9d8df] bg-white/75 px-5 py-8 text-center dark:border-white/15 dark:bg-white/[.025] sm:px-8 sm:py-10">
+      <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e9f0f4] text-[#1f4f70] dark:bg-sky-300/10 dark:text-sky-300">${icons.empty}</span>
       <h3 class="mt-4 text-base font-semibold text-slate-900 dark:text-white">Aucun module ajouté au S2 pour le moment.</h3>
       <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">Les ressources du premier semestre sont disponibles dans l’onglet S1.</p>
     </div>`;
@@ -153,15 +153,15 @@ function renderModules(moduleNames) {
   content.innerHTML = moduleNames.map((name) => {
     const categories = Object.keys(CURRICULUM[name] || {});
     const count = categories.reduce((sum, category) => sum + getResources(name, category).length, 0);
-    return `<button type="button" class="group flex min-h-44 flex-col rounded-2xl border border-[#e6e3da] bg-white p-4 text-left shadow-[0_1px_2px_rgba(32,43,42,.035)] transition duration-200 hover:-translate-y-0.5 hover:border-[#216b60]/45 hover:shadow-[0_10px_28px_rgba(32,43,42,.09)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#216b60] active:translate-y-0 dark:border-white/10 dark:bg-[#1d2421] dark:hover:border-emerald-300/35 dark:hover:shadow-[0_10px_28px_rgba(0,0,0,.2)] sm:p-5" data-module="${escapeHTML(name)}">
+    return `<button type="button" class="group flex min-h-44 flex-col rounded-2xl border border-[#d5e1e7] bg-white p-4 text-left shadow-[0_1px_2px_rgba(28,40,51,.035)] transition duration-200 hover:-translate-y-0.5 hover:border-[#1f4f70]/45 hover:shadow-[0_10px_28px_rgba(28,40,51,.09)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f4f70] active:translate-y-0 dark:border-white/10 dark:bg-[#182a3a] dark:hover:border-sky-300/35 dark:hover:shadow-[0_10px_28px_rgba(0,0,0,.2)] sm:p-5" data-module="${escapeHTML(name)}">
       <span class="flex w-full items-center gap-3.5">
-        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#dfe8e1] bg-[#edf2ed] p-1.5 text-[#216b60] transition-colors group-hover:bg-[#e5eee7] dark:border-white/10 dark:bg-white/[.07] dark:text-emerald-300 dark:group-hover:bg-white/10">${moduleIcons[name]}</span>
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#d9e5eb] bg-[#edf3f6] p-1.5 text-[#1f4f70] transition-colors group-hover:bg-[#dfeaf0] dark:border-white/10 dark:bg-white/[.07] dark:text-sky-300 dark:group-hover:bg-white/10">${moduleIcons[name]}</span>
         <span class="min-w-0 text-left text-[15px] font-semibold leading-snug text-slate-900 dark:text-white sm:text-base">${escapeHTML(name)}</span>
       </span>
-      <span class="mt-4 flex w-full flex-wrap gap-1.5">${categories.map((category) => `<span class="rounded-md border border-transparent bg-[#f7f7f4] px-2 py-0.5 text-[10px] font-medium leading-4 text-slate-500 dark:bg-white/[.035] dark:text-slate-400">${escapeHTML(category)}</span>`).join("")}</span>
+      <span class="mt-4 flex w-full flex-wrap gap-1.5">${categories.map((category) => `<span class="rounded-md border border-transparent bg-[#fbfcfd] px-2 py-0.5 text-[10px] font-medium leading-4 text-slate-500 dark:bg-white/[.035] dark:text-slate-400">${escapeHTML(category)}</span>`).join("")}</span>
       <span class="mt-auto flex w-full items-center justify-between gap-3 pt-4">
         <span class="text-[10px] font-medium leading-4 text-slate-500 dark:text-slate-400">${count} ressource${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"}</span>
-        <span aria-hidden="true" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#dfe8e1] bg-[#f5f7f3] text-[#216b60] transition duration-200 group-hover:translate-x-0.5 group-hover:border-[#216b60]/30 group-hover:bg-[#eaf1eb] group-hover:shadow-[0_0_0_3px_rgba(33,107,96,.08)] group-focus-visible:border-[#216b60]/40 group-focus-visible:bg-[#eaf1eb] dark:border-white/10 dark:bg-white/[.05] dark:text-emerald-300 dark:group-hover:border-emerald-300/30 dark:group-hover:bg-emerald-300/10 dark:group-hover:shadow-[0_0_0_3px_rgba(110,231,183,.1)] dark:group-focus-visible:border-emerald-300/40">${icons.arrow}</span>
+        <span aria-hidden="true" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#d9e5eb] bg-[#edf2f5] text-[#1f4f70] transition duration-200 group-hover:translate-x-0.5 group-hover:border-[#1f4f70]/30 group-hover:bg-[#e5f0f4] group-hover:shadow-[0_0_0_3px_rgba(31,79,112,.08)] group-focus-visible:border-[#1f4f70]/40 group-focus-visible:bg-[#e5f0f4] dark:border-white/10 dark:bg-white/[.05] dark:text-sky-300 dark:group-hover:border-sky-300/30 dark:group-hover:bg-sky-300/10 dark:group-hover:shadow-[0_0_0_3px_rgba(131,182,214,.1)] dark:group-focus-visible:border-sky-300/40">${icons.arrow}</span>
       </span>
     </button>`;
   }).join("");
@@ -180,8 +180,8 @@ function renderCategories(moduleName) {
   content.className = "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3";
   content.innerHTML = Object.keys(CURRICULUM[moduleName] || {}).map((category) => {
     const count = getResources(moduleName, category).length;
-    return `<button type="button" class="group flex min-h-32 flex-col rounded-2xl border border-[#e6e3da] bg-white p-4 text-left shadow-[0_1px_2px_rgba(32,43,42,.04)] transition hover:border-[#216b60]/35 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#216b60] active:scale-[.99] dark:border-white/10 dark:bg-[#1d2421] dark:hover:border-emerald-300/30 sm:p-5" data-category="${escapeHTML(category)}">
-      <span class="flex w-full items-center justify-between"><span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f1f2ed] text-[#216b60] dark:bg-emerald-300/10 dark:text-emerald-300">${icons.category}</span><span class="h-5 w-5 text-[#216b60] transition group-hover:translate-x-0.5 dark:text-emerald-300">${icons.arrow}</span></span>
+    return `<button type="button" class="group flex min-h-32 flex-col rounded-2xl border border-[#d5e1e7] bg-white p-4 text-left shadow-[0_1px_2px_rgba(28,40,51,.04)] transition hover:border-[#1f4f70]/35 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1f4f70] active:scale-[.99] dark:border-white/10 dark:bg-[#182a3a] dark:hover:border-sky-300/30 sm:p-5" data-category="${escapeHTML(category)}">
+      <span class="flex w-full items-center justify-between"><span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#e9f0f4] text-[#1f4f70] dark:bg-sky-300/10 dark:text-sky-300">${icons.category}</span><span class="h-5 w-5 text-[#1f4f70] transition group-hover:translate-x-0.5 dark:text-sky-300">${icons.arrow}</span></span>
       <span class="mt-4 block text-base font-semibold text-slate-900 dark:text-white">${escapeHTML(category)}</span>
       <span class="mt-1 block text-xs text-slate-500 dark:text-slate-400">${count ? `${count} ressource${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"}` : "Aucun document disponible"}</span>
     </button>`;
@@ -199,8 +199,8 @@ function renderResources(moduleName, category) {
   heading.textContent = category;
   breadcrumb.textContent = `${state.semester} / ${moduleName} / ${category}`;
   content.className = "grid grid-cols-1 gap-3";
-  const rows = resources.map((resource) => `<a class="flex min-h-16 items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition hover:border-emerald-700/30 hover:bg-emerald-50/40 dark:border-white/10 dark:bg-[#182321] dark:hover:border-emerald-300/30 dark:hover:bg-emerald-300/5" href="${escapeHTML(resource.url)}" target="_blank" rel="noopener noreferrer">
-    <span class="flex min-w-0 items-center gap-3"><span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-slate-300">${icons.category}</span><span class="truncate text-sm font-medium text-slate-800 dark:text-slate-100">${escapeHTML(resource.title)}</span></span><span class="h-4 w-4 shrink-0 text-[#087f70] dark:text-emerald-300">${icons.external}</span>
+  const rows = resources.map((resource) => `<a class="flex min-h-16 items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition hover:border-sky-700/30 hover:bg-sky-50/40 dark:border-white/10 dark:bg-[#142535] dark:hover:border-sky-300/30 dark:hover:bg-sky-300/5" href="${escapeHTML(resource.url)}" target="_blank" rel="noopener noreferrer">
+    <span class="flex min-w-0 items-center gap-3"><span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-slate-300">${icons.category}</span><span class="truncate text-sm font-medium text-slate-800 dark:text-slate-100">${escapeHTML(resource.title)}</span></span><span class="h-4 w-4 shrink-0 text-[#173f5d] dark:text-sky-300">${icons.external}</span>
   </a>`).join("");
   const emptyState = `<div class="rounded-2xl border border-dashed border-slate-300 bg-white/70 p-7 text-center dark:border-white/15 dark:bg-white/[.025]">
       <span class="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">${icons.empty}</span>
