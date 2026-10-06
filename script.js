@@ -19,6 +19,7 @@ const SEMESTER_MODULES = {
 
 // Add real documents under their module/category as { title, url }.
 const state = { semester: "S1", module: null, category: null };
+const HISTORY_KEY = "m1gcNavigation";
 const content = document.querySelector("#content");
 const heading = document.querySelector("#content-heading");
 const breadcrumb = document.querySelector("#breadcrumb");
@@ -63,7 +64,31 @@ function isSafeLink(url) {
   }
 }
 
-function setSemester(semester) {
+function saveNavigationState({ replace = false } = {}) {
+  const current = history.state && typeof history.state === "object" ? history.state : {};
+  const previousDepth = Number(current[HISTORY_KEY]?.depth) || 0;
+  const navigation = {
+    semester: state.semester,
+    module: state.module,
+    category: state.category,
+    depth: replace ? previousDepth : previousDepth + 1
+  };
+  history[replace ? "replaceState" : "pushState"]({ ...current, [HISTORY_KEY]: navigation }, "", location.href);
+}
+
+function restoreNavigationState(navigation) {
+  if (!navigation || !["S1", "S2"].includes(navigation.semester)) return;
+  state.semester = navigation.semester;
+  const semesterModules = SEMESTER_MODULES[state.semester] || [];
+  state.module = semesterModules.includes(navigation.module) ? navigation.module : null;
+  const categories = state.module ? Object.keys(CURRICULUM[state.module] || {}) : [];
+  state.category = categories.includes(navigation.category) ? navigation.category : null;
+  render();
+  focusBrowse();
+}
+
+function setSemester(semester, { recordHistory = true } = {}) {
+  const viewChanged = state.module !== null || state.category !== null;
   const semesterChanged = state.semester !== semester;
   state.semester = semester;
   state.module = null;
@@ -77,7 +102,8 @@ function setSemester(semester) {
   });
   document.querySelector("#semester-caption").textContent = semester === "S1" ? "Semestre 1" : "Semestre 2";
   render();
-  if (semesterChanged) focusBrowse();
+  if (recordHistory && (semesterChanged || viewChanged)) saveNavigationState();
+  if (semesterChanged || viewChanged) focusBrowse();
 }
 
 function focusBrowse() {
@@ -128,6 +154,8 @@ function renderModules(moduleNames) {
   }).join("");
   content.querySelectorAll("[data-module]").forEach((button) => button.addEventListener("click", () => {
     state.module = button.dataset.module;
+    state.category = null;
+    saveNavigationState();
     render();
     focusBrowse();
   }));
@@ -147,6 +175,7 @@ function renderCategories(moduleName) {
   }).join("");
   content.querySelectorAll("[data-category]").forEach((button) => button.addEventListener("click", () => {
     state.category = button.dataset.category;
+    saveNavigationState();
     render();
     focusBrowse();
   }));
@@ -170,8 +199,15 @@ function renderResources(moduleName, category) {
 }
 
 function goBack() {
+  const navigation = history.state?.[HISTORY_KEY];
+  if (navigation && navigation.depth > 0) {
+    history.back();
+    return;
+  }
   if (state.category) state.category = null;
   else if (state.module) state.module = null;
+  else return;
+  saveNavigationState();
   render();
   focusBrowse();
 }
@@ -190,6 +226,7 @@ document.querySelector("#home-link").addEventListener("click", (event) => {
   event.preventDefault();
   state.module = null;
   state.category = null;
+  saveNavigationState();
   render();
 });
 document.querySelector("#theme-toggle").addEventListener("click", () => {
@@ -200,4 +237,8 @@ document.querySelector("#theme-toggle").addEventListener("click", () => {
 });
 
 updateThemeButton();
-setSemester("S1");
+history.replaceState({ ...(history.state && typeof history.state === "object" ? history.state : {}), [HISTORY_KEY]: { ...state, depth: 0 } }, "", location.href);
+window.addEventListener("popstate", (event) => {
+  restoreNavigationState(event.state?.[HISTORY_KEY]);
+});
+setSemester("S1", { recordHistory: false });
