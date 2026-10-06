@@ -6,7 +6,14 @@ const CURRICULUM = {
   "Structures Métalliques": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
   "MDS": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
   "Thermique du bâtiment": { "Cours": [], "Examen": [] },
-  "Respect des normes et des règles d'éthique": { "Cours": [], "Examen": [] },
+  "Respect des normes et des règles d'éthique": { "Cours": [
+    {title: "Charte d'éthique et de déontologie du mesrs-2021.pdf",
+      url: "https://drive.google.com/file/d/1mqhbdUoN5cxqbXeGVjg3H9Pn40dtIzF6/view?usp=drive_link"
+    },
+    {title: "ميثاق الآداب و الأخلاقيات الجامعية 2021.pdf",
+      url: "https://drive.google.com/file/d/1N6yCEM0ahQc-I511K9AiZFIN1m7okHmh/view?usp=drive_link"
+    }
+  ], "Examen": [] },
   "Matériaux Innovants": { "Cours": [], "TP": [], "Examen": [] },
   "Program Avan Python": { "Cours": [], "TP": [], "Examen": [] },
   "Méth Expé": { "TP": [] }
@@ -142,14 +149,20 @@ function renderModules(moduleNames) {
     </div>`;
     return;
   }
-  content.className = "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3";
-  content.innerHTML = moduleNames.map((name, index) => {
+  content.className = "grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3";
+  content.innerHTML = moduleNames.map((name) => {
     const categories = Object.keys(CURRICULUM[name] || {});
     const count = categories.reduce((sum, category) => sum + getResources(name, category).length, 0);
-    return `<button type="button" class="group flex min-h-36 flex-col rounded-2xl border border-[#e6e3da] bg-white p-4 text-left shadow-[0_1px_2px_rgba(32,43,42,.04)] transition hover:border-[#216b60]/35 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#216b60] active:scale-[.99] dark:border-white/10 dark:bg-[#1d2421] dark:hover:border-emerald-300/30 sm:p-5" data-module="${escapeHTML(name)}">
-      <span class="flex w-full items-center justify-between gap-3"><span class="flex items-center gap-2.5"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f1f2ed] p-1.5 text-[#216b60] dark:bg-emerald-300/10 dark:text-emerald-300">${moduleIcons[name]}</span><span class="font-mono text-[11px] font-medium tracking-wide text-slate-400 dark:text-slate-500">${String(index + 1).padStart(2, "0")}</span></span><span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 dark:text-slate-400">${count} ressource${count === 1 ? "" : "s"}<span class="h-4 w-4 text-[#216b60] transition group-hover:translate-x-0.5 dark:text-emerald-300">${icons.arrow}</span></span></span>
-      <span class="mt-3 block w-full text-base font-semibold leading-snug text-slate-900 dark:text-white sm:text-[17px]">${escapeHTML(name)}</span>
-      <span class="mt-3 flex w-full flex-wrap gap-1.5">${categories.map((category) => `<span class="rounded-md bg-[#f4f3ef] px-2 py-1 text-[10px] font-medium leading-4 text-slate-600 dark:bg-white/5 dark:text-slate-300">${escapeHTML(category)}</span>`).join("")}</span>
+    return `<button type="button" class="group flex min-h-44 flex-col rounded-2xl border border-[#e6e3da] bg-white p-4 text-left shadow-[0_1px_2px_rgba(32,43,42,.035)] transition duration-200 hover:-translate-y-0.5 hover:border-[#216b60]/45 hover:shadow-[0_10px_28px_rgba(32,43,42,.09)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#216b60] active:translate-y-0 dark:border-white/10 dark:bg-[#1d2421] dark:hover:border-emerald-300/35 dark:hover:shadow-[0_10px_28px_rgba(0,0,0,.2)] sm:p-5" data-module="${escapeHTML(name)}">
+      <span class="flex w-full items-center gap-3.5">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#dfe8e1] bg-[#edf2ed] p-1.5 text-[#216b60] transition-colors group-hover:bg-[#e5eee7] dark:border-white/10 dark:bg-white/[.07] dark:text-emerald-300 dark:group-hover:bg-white/10">${moduleIcons[name]}</span>
+        <span class="min-w-0 text-left text-[15px] font-semibold leading-snug text-slate-900 dark:text-white sm:text-base">${escapeHTML(name)}</span>
+      </span>
+      <span class="mt-4 flex w-full flex-wrap gap-1.5">${categories.map((category) => `<span class="rounded-md border border-transparent bg-[#f7f7f4] px-2 py-0.5 text-[10px] font-medium leading-4 text-slate-500 dark:bg-white/[.035] dark:text-slate-400">${escapeHTML(category)}</span>`).join("")}</span>
+      <span class="mt-auto flex w-full items-center justify-between gap-3 pt-4">
+        <span class="text-[10px] font-medium leading-4 text-slate-500 dark:text-slate-400">${count} ressource${count === 1 ? "" : "s"} disponible${count === 1 ? "" : "s"}</span>
+        <span aria-hidden="true" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#dfe8e1] bg-[#f5f7f3] text-[#216b60] transition duration-200 group-hover:translate-x-0.5 group-hover:border-[#216b60]/30 group-hover:bg-[#eaf1eb] group-hover:shadow-[0_0_0_3px_rgba(33,107,96,.08)] group-focus-visible:border-[#216b60]/40 group-focus-visible:bg-[#eaf1eb] dark:border-white/10 dark:bg-white/[.05] dark:text-emerald-300 dark:group-hover:border-emerald-300/30 dark:group-hover:bg-emerald-300/10 dark:group-hover:shadow-[0_0_0_3px_rgba(110,231,183,.1)] dark:group-focus-visible:border-emerald-300/40">${icons.arrow}</span>
+      </span>
     </button>`;
   }).join("");
   content.querySelectorAll("[data-module]").forEach((button) => button.addEventListener("click", () => {
