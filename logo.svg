@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cadre structurel">
-  <circle cx="32" cy="32" r="29" fill="#202B2A"/>
-  <circle cx="32" cy="32" r="28" fill="none" stroke="#527C68" stroke-width="2"/>
-  <path d="M16 17h32v5H16zM16 31h32v5H16zM16 45h32v5H16z" fill="#F4F0E6"/>
-  <path d="M16 17h5v33h-5zM43 17h5v33h-5z" fill="#81A98D"/>
-  <path d="M21 22 43 31v5L21 27z" fill="#81A98D"/>
-  <path d="M43 36 21 45v5l22-9z" fill="#527C68"/>
+  <circle cx="32" cy="32" r="29" fill="#142535"/>
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#1f4f70" stroke-width="2"/>
+  <path d="M16 17h32v5H16zM16 31h32v5H16zM16 45h32v5H16z" fill="#edf3f6"/>
+  <path d="M16 17h5v33h-5zM43 17h5v33h-5z" fill="#739fc0"/>
+  <path d="M21 22 43 31v5L21 27z" fill="#83b6d6"/>
+  <path d="M43 36 21 45v5l22-9z" fill="#1f4f70"/>
 </svg>
