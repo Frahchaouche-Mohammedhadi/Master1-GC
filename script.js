@@ -1,12 +1,42 @@
 // Edit this catalog to add modules, categories, and documents in one place.
 // Keep resource lists empty until real Drive links are available.
 const CURRICULUM = {
-  "Béton Armé": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
-  "DDS 1": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
-  "Structures Métalliques": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
-  "MDS": { "Cours": [], "TD": [], "Examen / Interrogation": [] },
-  "Thermique du bâtiment": { "Cours": [], "Examen": [] },
-  "Respect des normes et des règles d'éthique": { "Cours": [
+
+  "Béton Armé": { 
+    "Cours": [
+      {title: "Chapitre 01-Cacul des planchers.pdf",
+      url: "https://drive.google.com/file/d/19n79dMOHCw1s_bgmdqRMvahsPv4pW-V2/view?usp=drive_link"
+    },
+    ], 
+    "TD": [], 
+    "Examen / Interrogation": [] },
+
+
+  "DDS 1": { 
+    "Cours": [], 
+    "TD": [], 
+    "Examen / Interrogation": [] },
+
+
+  "Structures Métalliques": { 
+    "Cours": [], 
+    "TD": [], 
+    "Examen / Interrogation": [] },
+
+
+  "MDS": { 
+    "Cours": [], 
+    "TD": [], 
+    "Examen / Interrogation": [] },
+
+
+  "Thermique du bâtiment": { 
+    "Cours": [], 
+    "Examen": [] },
+
+
+  "Respect des normes et des règles d'éthique": { 
+    "Cours": [
     {title: "Charte d'éthique et de déontologie du mesrs-2021.pdf",
       url: "https://drive.google.com/file/d/1mqhbdUoN5cxqbXeGVjg3H9Pn40dtIzF6/view?usp=drive_link"
     },
@@ -14,9 +44,22 @@ const CURRICULUM = {
       url: "https://drive.google.com/file/d/1N6yCEM0ahQc-I511K9AiZFIN1m7okHmh/view?usp=drive_link"
     }
   ], "Examen": [] },
-  "Matériaux Innovants": { "Cours": [], "TP": [], "Examen": [] },
-  "Program Avan Python": { "Cours": [], "TP": [], "Examen": [] },
-  "Méth Expé": { "TP": [] }
+
+
+  "Matériaux Innovants": { 
+    "Cours": [], 
+    "TP": [], 
+    "Examen": [] },
+
+
+  "Program Avan Python": { 
+    "Cours": [], 
+    "TP": [], 
+    "Examen": [] },
+
+
+  "Méth Expé": { 
+    "TP": [] }
 };
 
 const SEMESTER_MODULES = {
