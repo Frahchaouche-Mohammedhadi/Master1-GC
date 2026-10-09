@@ -42,7 +42,7 @@ const CURRICULUM = {
     },
     {title: "ميثاق الآداب و الأخلاقيات الجامعية 2021.pdf",
       url: "https://drive.google.com/file/d/1N6yCEM0ahQc-I511K9AiZFIN1m7okHmh/view?usp=drive_link"
-    }
+    },
   ], "Examen": [] },
 
 
@@ -54,7 +54,11 @@ const CURRICULUM = {
 
   "Program Avan Python": { 
     "Cours": [], 
-    "TP": [], 
+    "TP": [
+{title: "Lab 1 _ Introduction to Python.pdf",
+      url: "https://drive.google.com/file/d/104vlEkFxVvOeFDygKWIAZHy7mI26VRHd/view?usp=drive_link"
+    },
+    ], 
     "Examen": [] },
 
 
@@ -274,6 +278,7 @@ function updateThemeButton() {
     ? '<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>'
     : '<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>';
   document.querySelector("#theme-toggle").setAttribute("aria-label", dark ? "Activer le thème clair" : "Activer le thème sombre");
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", dark ? "#0b1520" : "#f5f8fa");
 }
 
 document.querySelectorAll(".semester-button").forEach((button) => button.addEventListener("click", () => setSemester(button.dataset.semester)));
