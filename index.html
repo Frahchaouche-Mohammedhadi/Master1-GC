@@ -9,12 +9,11 @@
   <title>M1 • GC — Ressources pédagogiques</title>
   <script>
     (() => {
-      let theme = 'light';
+      let theme = 'dark';
       try {
-        theme = localStorage.getItem('m1gc-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      } catch (_) {
-        theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
+        const savedTheme = localStorage.getItem('m1gc-theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') theme = savedTheme;
+      } catch (_) { /* Dark mode remains the default when storage is unavailable. */ }
       document.documentElement.classList.toggle('dark', theme === 'dark');
     })();
   </script>
