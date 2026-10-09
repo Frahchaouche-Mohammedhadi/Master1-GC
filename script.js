@@ -66,12 +66,18 @@ const CURRICULUM = {
     "TP": [] }
 };
 
-// Present TDs and their solutions together in every module.
+// Normalize labels while preserving the catalog order (TD before exams).
 Object.values(CURRICULUM).forEach((categories) => {
-  if (Object.hasOwn(categories, "TD")) {
-    categories["TD / Solution TD"] = [...(categories["TD / Solution TD"] || []), ...categories.TD];
-    delete categories.TD;
-  }
+  const normalized = {};
+  Object.entries(categories).forEach(([label, resources]) => {
+    const name = label === "TD" ? "TD / Solution TD"
+      : label === "Examen / Interrogation" ? "Examens / Interrogations"
+      : label === "Examen" ? "Examens"
+      : label;
+    normalized[name] = [...(normalized[name] || []), ...resources];
+  });
+  Object.keys(categories).forEach((label) => delete categories[label]);
+  Object.assign(categories, normalized);
 });
 
 const SEMESTER_MODULES = {
