@@ -66,6 +66,14 @@ const CURRICULUM = {
     "TP": [] }
 };
 
+// Present TDs and their solutions together in every module.
+Object.values(CURRICULUM).forEach((categories) => {
+  if (Object.hasOwn(categories, "TD")) {
+    categories["TD / Solution TD"] = [...(categories["TD / Solution TD"] || []), ...categories.TD];
+    delete categories.TD;
+  }
+});
+
 const SEMESTER_MODULES = {
   S1: Object.keys(CURRICULUM),
   S2: []
