@@ -7,6 +7,9 @@ const CURRICULUM = {
       {title: "Chapitre 01-Cacul des planchers.pdf",
       url: "https://drive.google.com/file/d/19n79dMOHCw1s_bgmdqRMvahsPv4pW-V2/view?usp=drive_link"
     },
+    {title: "Support cour 01.pdf",
+      url: "https://drive.google.com/file/d/1sU4gudzG3__OYH6EkuSN0InU66fJoSzM/view?usp=drive_link"
+    },
     ], 
     "TD": [], 
     "Examen / Interrogation": [] },
@@ -43,6 +46,9 @@ const CURRICULUM = {
     {title: "ميثاق الآداب و الأخلاقيات الجامعية 2021.pdf",
       url: "https://drive.google.com/file/d/1N6yCEM0ahQc-I511K9AiZFIN1m7okHmh/view?usp=drive_link"
     },
+    {title: "Partie A_ethique et déontologie.pdf",
+      url: "https://drive.google.com/file/d/1iau1xD6z7uAs71Jup3SxI-HMm9OiI-nT/view?usp=drive_link"
+    },
   ], "Examen": [] },
 
 
@@ -55,8 +61,11 @@ const CURRICULUM = {
   "Program Avan Python": { 
     "Cours": [], 
     "TP": [
-{title: "Lab 1 _ Introduction to Python.pdf",
+{title: "TP 01.pdf",
       url: "https://drive.google.com/file/d/104vlEkFxVvOeFDygKWIAZHy7mI26VRHd/view?usp=drive_link"
+    },
+{title: "TP 02.pdf",
+      url: "https://drive.google.com/file/d/16l57NgINHT0dUhFVKghTESy_hnQv1e8x/view?usp=drive_link"
     },
     ], 
     "Examen": [] },
