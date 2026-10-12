@@ -10,8 +10,12 @@ const CURRICULUM = {
     {title: "Support cour 01.pdf",
       url: "https://drive.google.com/file/d/1sU4gudzG3__OYH6EkuSN0InU66fJoSzM/view?usp=drive_link"
     },
+    ],
+    "TD": [
+      {title: "TD 01.pdf",
+      url: "https://drive.google.com/file/d/1h5mx_S9KJu4gULahbYZ9W9hRn7TqB3-U/view?usp=drive_link"
+    },
     ], 
-    "TD": [], 
     "Examen / Interrogation": [] },
 
 
