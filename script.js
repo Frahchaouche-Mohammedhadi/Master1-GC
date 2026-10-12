@@ -10,6 +10,9 @@ const CURRICULUM = {
     {title: "Support cour 01.pdf",
       url: "https://drive.google.com/file/d/1sU4gudzG3__OYH6EkuSN0InU66fJoSzM/view?usp=drive_link"
     },
+     {title: "Chapitre 01-Méthode des lignes de rupture.pdf",
+      url: "https://drive.google.com/file/d/1dZs0dpxGwa85on9nGjj9QigmvYMgdHGS/view?usp=drive_link"
+    },
     ],
     "TD": [
       {title: "TD 01.pdf",
