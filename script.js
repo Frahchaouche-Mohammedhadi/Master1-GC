@@ -30,7 +30,11 @@ const CURRICULUM = {
 
   "Structures Métalliques": { 
     "Cours": [], 
-    "TD": [], 
+    "TD": [
+      {title: "TD 01.pdf",
+      url: "https://drive.google.com/file/d/1MByy6HqftSbA36kPY0OISUR5i-haaycm/view?usp=drive_link"
+    },
+    ],
     "Examen / Interrogation": [] },
 
 
