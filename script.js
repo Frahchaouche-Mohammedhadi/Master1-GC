@@ -13,10 +13,13 @@ const CURRICULUM = {
      {title: "Chapitre 01-Méthode des lignes de rupture.pdf",
       url: "https://drive.google.com/file/d/1dZs0dpxGwa85on9nGjj9QigmvYMgdHGS/view?usp=drive_link"
     },
+    {title: "Chapitre-02-Fondations-superficielles.pdf",
+      url: "https://drive.google.com/file/d/1n4zwVpT8Tlssk85lcQYgCO8MeOwrMTej/view?usp=drive_link"
+    },
     ],
     "TD": [
       {title: "TD 01.pdf",
-      url: "https://drive.google.com/file/d/1h5mx_S9KJu4gULahbYZ9W9hRn7TqB3-U/view?usp=drive_link"
+      url: "https://drive.google.com/file/d/1Ns9GLJJhcu_Oi5YSntnAnaMvfUk9JsOp/view?usp=drive_link"
     },
     ], 
     "Examen / Interrogation": [] },
@@ -32,7 +35,7 @@ const CURRICULUM = {
     "Cours": [], 
     "TD": [
       {title: "TD 01.pdf",
-      url: "https://drive.google.com/file/d/1MByy6HqftSbA36kPY0OISUR5i-haaycm/view?usp=drive_link"
+      url: "https://drive.google.com/file/d/1hKvU8jV3RuR0aHZVzVexVd-kBIeNIQXb/view?usp=drive_link"
     },
     ],
     "Examen / Interrogation": [] },
