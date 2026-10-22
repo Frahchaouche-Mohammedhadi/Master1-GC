@@ -16,6 +16,10 @@ const CURRICULUM = {
     {title: "Chapitre-02-Fondations-superficielles.pdf",
       url: "https://drive.google.com/file/d/1n4zwVpT8Tlssk85lcQYgCO8MeOwrMTej/view?usp=drive_link"
     },
+    {title: "Chapitre-03-Portiques-sous-charges-verticales.pdf",
+      url: "https://drive.google.com/file/d/1AEVwg1GT4XjW39cOwprTJgPxISiJhAU6/view?usp=drive_link"
+    },
+
     ],
     "TD": [
       {title: "TD 01.pdf",
