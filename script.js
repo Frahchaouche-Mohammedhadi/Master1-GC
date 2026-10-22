@@ -21,7 +21,7 @@ const CURRICULUM = {
       {title: "TD 01.pdf",
       url: "https://drive.google.com/file/d/1Ns9GLJJhcu_Oi5YSntnAnaMvfUk9JsOp/view?usp=drive_link"
     },
-    ], 
+    ],
     "Examen / Interrogation": [] },
 
 
@@ -32,10 +32,20 @@ const CURRICULUM = {
 
 
   "Structures Métalliques": { 
-    "Cours": [], 
+    "Cours": [
+      {title: "Formules 2025.pdf",
+      url: "https://drive.google.com/file/d/1KavjYgyGdyRsrFdyMc9WIaklgg5RlEHi/view?usp=drive_link"
+    },
+    ],
     "TD": [
       {title: "TD 01.pdf",
-      url: "https://drive.google.com/file/d/1hKvU8jV3RuR0aHZVzVexVd-kBIeNIQXb/view?usp=drive_link"
+      url: "https://drive.google.com/file/d/1jXo3wWHAsRslJ55HCA1g2pf_5rGgPtnU/view?usp=drive_link"
+    },
+     {title: "[ SOLUTION ]- TD 01.pdf",
+      url: "https://drive.google.com/file/d/1HXF8fv2qJTRyUBfGwHX2SLAQwsSfF279/view?usp=drive_link"
+    },
+    {title: "TD 02.pdf",
+      url: "https://drive.google.com/file/d/1xydg40MEUAOnCOLhGoU-xxDY_n8l76EG/view?usp=drive_link"
     },
     ],
     "Examen / Interrogation": [] },
@@ -67,7 +77,20 @@ const CURRICULUM = {
 
 
   "Matériaux Innovants": { 
-    "Cours": [], 
+    "Cours": [
+      {title: "Chapitre 01.pdf",
+      url: "https://drive.google.com/file/d/1l1WMqv-sJVjvO_urF2yoHJjl-ajoFd3r/view?usp=drive_link"
+    },
+    {title: "Chapitre 02.pdf",
+      url: "https://drive.google.com/file/d/1Wr1_QYwEcclSPtUltBygSKtu_JzLk_u7/view?usp=drive_link"
+    },
+    {title: "Chapitre 03.pdf",
+      url: "https://drive.google.com/file/d/1oCA74PvRQ3NOG_FZTQcBeZIl5Ajc0cgJ/view?usp=drive_link"
+    },
+    {title: "Chapitre 04.pdf",
+      url: "https://drive.google.com/file/d/15qBJ_KFbSILIRcPRomNTro88CHUhvHMG/view?usp=drive_link"
+    },
+    ],
     "TP": [], 
     "Examen": [] },
 
