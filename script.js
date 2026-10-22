@@ -45,7 +45,7 @@ const CURRICULUM = {
       {title: "TD 01.pdf",
       url: "https://drive.google.com/file/d/1jXo3wWHAsRslJ55HCA1g2pf_5rGgPtnU/view?usp=drive_link"
     },
-     {title: "[ SOLUTION ]- TD 01.pdf",
+     {title: "[ SOLUTION ] - TD 01.pdf",
       url: "https://drive.google.com/file/d/1HXF8fv2qJTRyUBfGwHX2SLAQwsSfF279/view?usp=drive_link"
     },
     {title: "TD 02.pdf",
